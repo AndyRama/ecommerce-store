@@ -1,5 +1,4 @@
 import { Product } from "@/types"
-// import React from "react"
 import NoResults from "./ui/no-result"
 
 interface ProductListProps {
