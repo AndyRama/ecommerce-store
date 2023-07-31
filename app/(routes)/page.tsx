@@ -1,6 +1,15 @@
+import { Container } from "lucide-react"
+import Billboard from "../components/billboard"
+
 const HomePage= () => {
   return (
-    <div>Hello Home Page ...</div>
+    <Container>
+      <div 
+        className="space-y-10 pb-10"
+      >
+        <Billboard data={""}/>
+      </div>
+    </Container>
   )
 } 
 
