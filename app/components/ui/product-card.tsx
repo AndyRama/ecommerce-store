@@ -1,12 +1,12 @@
 "use client"
 
 import Image from 'next/image'
-import { Expand, Router, ShoppingCart } from "lucide-react"
+import { Expand, ShoppingCart } from "lucide-react"
 
 import { Product } from '@/types'
 import IconButton from '@/app/components/ui/icon-button'
 import Currency from './currency'
-import router from 'next/router'
+import { useRouter } from 'next/navigation'
 
 interface ProductCard {
   data: Product
@@ -15,10 +15,12 @@ interface ProductCard {
 const ProductCard: React.FC<ProductCard> = ({
   data
 }) => {
+  const router = useRouter()
 
   const handleClick = () => {
-    router.push(`/products/${data?.id}`)
+    router.push(`/product/${data?.id}`)
   }
+
   return (
       <div onClick={handleClick} className='bg-white group cursor-pointer rounded-xl border p-3 space-y-4'>
         {/* Image and Actions */}
