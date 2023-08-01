@@ -18,9 +18,9 @@ const Gallery: React.FC<GalleryProps> = ({
     <Tab.Group as="div" className="flex flex-col-reverse"> 
       <div className="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
         <Tab.List className="gird grid-cols-4 gap-6 ">
-          { images.map((image) => {
+          { images.map((image) => (
             <GalleryTab key={image.id} image={image} />
-          })}
+          ))}
         </Tab.List>
       </div>
       <Tab.Panels className="aspect-square w-full">
