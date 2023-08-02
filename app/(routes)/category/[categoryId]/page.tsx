@@ -1,12 +1,18 @@
 import getProducts from "@/actions/get-products"
+import getSizes from "@/actions/get-sizes"
+import getCategory from "@/actions/get-category"
+import getColors from "@/actions/get-colors"
+
+import Container from "@/app/components/ui/container"
+import Billboard from "@/app/components/billboard"
 
 export const revalidate = 0
 
 interface CategoryPageProps {
   params: {
-    colorId: string | undefined
-    sizeId: string | undefined
     categoryId: string
+    sizeId: string | undefined
+    colorId: string | undefined
   }, 
   searchParams: {
     colorId: string
@@ -22,10 +28,20 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
     colorId: params.colorId,
     sizeId: params.sizeId,
   })
+  const sizes = await getSizes()
+  const colors = await getColors()
+  const category = await getCategory(params.categoryId)
   
   return (
-    <div>
-      Category
+    <div className="bg-white">
+      <Container> 
+        <Billboard 
+          data={ category.billboard }
+         />
+         <div className="px-4 sm:px-6 lg:px-8 pb-24" >
+
+         </div>
+      </Container>
     </div>
   )
 }
