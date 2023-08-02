@@ -11,8 +11,8 @@ export const revalidate = 0
 interface CategoryPageProps {
   params: {
     categoryId: string
-    sizeId: string | undefined
-    colorId: string | undefined
+    sizeId: string 
+    colorId: string 
   }, 
   searchParams: {
     colorId: string
@@ -31,7 +31,7 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
   const sizes = await getSizes()
   const colors = await getColors()
   const category = await getCategory(params.categoryId)
-  
+
   return (
     <div className="bg-white">
       <Container> 
