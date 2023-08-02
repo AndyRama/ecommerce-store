@@ -5,6 +5,7 @@ import getColors from "@/actions/get-colors"
 
 import Container from "@/app/components/ui/container"
 import Billboard from "@/app/components/billboard"
+import Filter from "./components/filter"
 
 export const revalidate = 0
 
@@ -39,6 +40,12 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
           data={ category.billboard }
          />
          <div className="px-4 sm:px-6 lg:px-8 pb-24" >
+          <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
+            {/* Add Mobile Filters */}
+            <div className="hidden lg:block">    
+              <Filter data={undefined} name={""} valueKey={""} />
+            </div>
+          </div>
 
          </div>
       </Container>
