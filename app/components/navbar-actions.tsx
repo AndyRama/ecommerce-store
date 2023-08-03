@@ -2,6 +2,7 @@
 
 import { ShoppingBag } from "lucide-react"
 import { useEffect, useState } from "react"
+// import { useRouter } from "next/navigation";
 
 import Button from "./ui/button"
 
@@ -11,6 +12,8 @@ const NavbarActions = () => {
   useEffect(() => {
     setIsMounted(true)
   }, [])
+
+  // const router = useRouter();
 
   if(!isMounted) {
     return null

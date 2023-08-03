@@ -6,6 +6,7 @@ import getColors from "@/actions/get-colors"
 import Container from "@/app/components/ui/container"
 import Billboard from "@/app/components/billboard"
 import Filter from "./components/filter"
+import NoResults from "@/app/components/ui/no-result"
 
 export const revalidate = 0
 
@@ -22,7 +23,7 @@ interface CategoryPageProps {
 }
 const CategoryPage: React.FC<CategoryPageProps> = async ({
   params,
-  searchParams
+  searchParams,
 }) => {
   const products = await getProducts({
     categoryId: params.categoryId,
@@ -55,7 +56,9 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
               />
             </div>
           </div>
-
+            <div className="mt-6 lg:col-span-4 lg:mt-0">
+              { products.length === 0 && <NoResults/> }
+            </div>
          </div>
       </Container>
     </div>

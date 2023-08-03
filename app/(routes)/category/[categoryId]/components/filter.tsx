@@ -1,13 +1,14 @@
 "use client"
 
 import { useRouter,useSearchParams } from 'next/navigation'
+import qs from "query-string"
 
 import { Color, Size } from '@/types'
 import Button from '@/app/components/ui/button'
 import { cn } from '@/app/lib/utils'
 
 interface FilterProps {
-  data: (Size | Color)
+  data: (Size | Color)[]
   name: string
   valueKey: string
 }
