@@ -7,6 +7,7 @@ import Container from "@/app/components/ui/container"
 import Billboard from "@/app/components/billboard"
 import Filter from "./components/filter"
 import NoResults from "@/app/components/ui/no-result"
+import ProductCard from "@/app/components/ui/product-card"
 
 export const revalidate = 0
 
@@ -55,11 +56,19 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
                 data={colors}
               />
             </div>
-          </div>
             <div className="mt-6 lg:col-span-4 lg:mt-0">
               { products.length === 0 && <NoResults/> }
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                { products.map((item) => (
+                  <ProductCard
+                    key={item.id}
+                    data={item}
+                  />
+                ))}
+              </div>
             </div>
-         </div>
+          </div>
+        </div>
       </Container>
     </div>
   )
