@@ -5,6 +5,9 @@ import { useEffect, useState } from "react"
 import Container from "@/app/components/ui/container"
 import useCart from "@/hooks/use-cart"
 
+import CartItem from "./components/cart-items"
+
+
 const CartPage = () => {
   // const[ isMounted, setIsMounted] = useState(false)
 
@@ -16,7 +19,7 @@ const CartPage = () => {
   //   return null
   // }
 
-  const cart = useCart
+  const cart = useCart()
 
   return (
     <div className="bg-white">
@@ -28,7 +31,7 @@ const CartPage = () => {
                {cart.items.length === 0 && <p 
                className="text-neutral-500">No items added to cart</p>}
                <ul>
-                { cart.items.map((item) => {
+                {cart.items.map((item) => {
                   <CartItem
                     key={item.id}
                     data={item}
