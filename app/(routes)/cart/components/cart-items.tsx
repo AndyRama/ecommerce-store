@@ -24,9 +24,12 @@ const CartItem: React.FC<CartItemProps> = ({
           src={data.images[0].url}
           alt=""
           className="object-cover object-center"
-        >
-
-        </Image>
+        />
+      </div>
+      <div className="relative ml-4 flex flex-1 flex-col justify-between sm:ml-6" >
+        <div className="absolute z-10 right-0 top-0">
+          <IconButton onClick={()=>{}} icon={<X size={15} />}/>
+        </div>
       </div>
     </li>
   )
