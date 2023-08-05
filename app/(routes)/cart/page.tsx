@@ -6,7 +6,7 @@ import Container from "@/app/components/ui/container"
 import useCart from "@/hooks/use-cart"
 
 import CartItem from "./components/cart-items"
-
+import Summary from "./components/summary"
 
 const CartPage = () => {
   // const[ isMounted, setIsMounted] = useState(false)
@@ -35,7 +35,7 @@ const CartPage = () => {
                 ))}
               </ul>
             </div>
-            {/* <Summary /> */}
+            <Summary />
           </div>
         </div>
       </Container>
