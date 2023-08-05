@@ -30,6 +30,13 @@ const CartItem: React.FC<CartItemProps> = ({
         <div className="absolute z-10 right-0 top-0">
           <IconButton onClick={()=>{}} icon={<X size={15} />}/>
         </div>
+        <div className="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
+          <div className="flex justify-between">
+            <p className="text-lg font-semibold text-black">
+              {data.name}
+            </p>
+          </div>
+        </div>
       </div>
     </li>
   )
