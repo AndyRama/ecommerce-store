@@ -35,10 +35,14 @@ const MainNav: React.FC<MainNavProps> = ({
           )}
         >
           {route.label}
+         {/* test test test  */}
+          
       </Link>
       ))}
     </nav>
   )
+
+  
 };
 
 export default MainNav;
