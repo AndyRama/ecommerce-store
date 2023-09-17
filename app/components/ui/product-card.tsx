@@ -43,7 +43,7 @@ const ProductCard: React.FC<ProductCard> = ({
         {/* Image and Actions */}
         <div className='aspect-square rounded-xl bg-gray-100 relative'>
             <Image 
-              src={data?.images?.[0]?.url}
+              src={data.images?.[0]?.url}
               alt="Image"
               fill
               className='aspect-square object-cover rounded-md'
@@ -61,12 +61,8 @@ const ProductCard: React.FC<ProductCard> = ({
           </div>
           {/* Description */}
           <div>
-            <p className='font-semibold text-lg'>
-              {data.name}
-            </p>
-            <p className='text-sm text-gray-500'>
-              {data.category?.name}
-            </p>
+            <p className='font-semibold text-lg'>{data.name}</p>
+            <p className='text-sm text-gray-500'>{data.category?.name}</p>
           </div>
           {/* Price */}
           <div className='flex items-center justify-between'>

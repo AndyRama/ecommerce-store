@@ -13,7 +13,7 @@ const font = Urbanist({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Store',
-  description: 'Store application',
+  description: 'Store - The place for all your purchases.',
 }
 
 export default function RootLayout({
